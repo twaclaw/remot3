@@ -4,22 +4,21 @@
 """Tests for `remot3` package."""
 
 import pytest
+from remot3 import Remot3
 
 
-from remot3 import remot3
+class TestRemot3(object):
+    def test_get_apiurl(self):
+        test_apiurl = 'https://test-apiurl/api'
+        r3 = Remot3('', '', '', test_apiurl)
+        assert r3.get_apiurl() == test_apiurl
 
+    def test_login(self):
+        r3 = Remot3('', '', '')
+        status, token, resp = r3.login()
+        assert resp['status'] == 'false'
 
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
-
-
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+    def test_parse_server_name(self):
+        r3 = Remot3('', '', '')
+        name = r3.parse_server_name('id=123', r".*id=(?P<id>\d*)")
+        assert name == '123'
