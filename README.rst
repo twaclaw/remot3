@@ -30,12 +30,42 @@ Implementation of the remot3.it API
 Features
 --------
 
-* TODO
+Installation
+~~~~~~~~~~~~~
+
+.. code:: bash
+        
+        pip install remot3
+
+Usage 
+~~~~~
+
+.. code-block:: Python
+
+        from remot3 import remot3
+
+        r3 = Remot3(developer_key, user, password)
+
+        # Optionally, the api version can be defined
+        r3 = Remot3(developer_key, user, password, apiurl='https://api.remot3.it/apv/v27/')
+
+        r3.login()
+
+        # A complete list of the devices can be retrieved, or
+        status,  devices, _ = r3.list_devices()
+
+        # Given an installation name retrieve the connection parameters
+        devices = r3.get_device_address(deviceName='MyDeviceName', serviceType='SSH')
+        if len(devices) > 0:
+                status, proxyserver, proxyport,  _ = r3.get_server_name(devices[0])
+                print('ssh user@{} -p {}'.format(proxyserver, proxyport))
+        
 
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+* https://remote.it/
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+* This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
