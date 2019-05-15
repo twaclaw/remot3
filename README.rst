@@ -40,10 +40,10 @@ Usage
 
         r3.login()
 
-        # A complete list of the devices can be retrieved, or
+        # Get the list of all devices
         status,  devices, _ = r3.list_devices()
 
-        # Given an installation name retrieve the connection parameters
+        # Retrieve the connection parameters for one particular connection: MyDeviceName
         devices = r3.get_device_address(deviceName='MyDeviceName', serviceType='SSH')
         if len(devices) > 0:
                 status, proxyserver, proxyport,  _ = r3.get_server_name(devices[0])
@@ -53,8 +53,7 @@ Usage
 Credits
 -------
 
-- https://remote.it/
-
-- This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+- https://remot3.it/
+- This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template
         .. _Cookiecutter: https://github.com/audreyr/cookiecutter
         .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
