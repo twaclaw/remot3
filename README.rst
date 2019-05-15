@@ -31,7 +31,7 @@ Usage
 
 .. code-block:: Python
 
-        from remot3 import remot3
+        from remot3 import Remot3
 
         r3 = Remot3(developer_key, user, password)
 

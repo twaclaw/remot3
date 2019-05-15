@@ -15,13 +15,13 @@ class Remot3(object):
     """Implements the remot3.it  API calls
 
     Args:
-        user (str): account user
-        password (str): account secret password
-        developerkey (str): account secret developer key
-        apiurl (str): API url and version
+        - user (str): account user.
+        - password (str): account secret password.
+        - developerkey (str): account secret developer key.
+        - apiurl (str): API url and version.
 
     Params:
-        token (str): session token
+        - token (str): session token
 
     """
 
@@ -46,16 +46,16 @@ class Remot3(object):
         return self.token
 
     def login(self,
-              resource='/user/login' ):
+              resource='/user/login'):
         """Implements login api
 
         Args:
-        - resource (str): Overrides API resource (suburl)
+            - resource (str): Overrides API resource (suburl)
 
         Returns:
-        - status (bool): whether the call returned successfully and the response is valid
-        - token (str): a valid connection token or None
-        - response_body (dict): the full response JSON object
+            - status (bool): whether the response is valid
+            - token (str): a valid connection token or None
+            - response_body (dict): the full response JSON object
         """
 
         headers = {
@@ -88,16 +88,16 @@ class Remot3(object):
         """Implements the device/list API call
         
         Args:
-            resource (str): API resource
-            token (str): Optional token to be used instead of self.token
-            headers (dict): Optional JSON object overriding the request header
+            - resource (str): API resource
+            - token (str): Optional token to be used instead of self.token
+            - headers (dict): Optional JSON object overriding the request header
 
         .. Note: requires a valid session token
 
         Returns:
-            status (bool): whether the call returned successfully and the response is valid
-            devices (list): a list of devices
-            response_body (dict): the full response JSON object
+            - status (bool): whether the call returned successfully and the response is valid
+            - devices (list): a list of devices
+            - response_body (dict): the full response JSON object
         """
 
         if token is None:
@@ -131,12 +131,12 @@ class Remot3(object):
         """Parses a server name
 
         Args:
-            servername (str): string containing the server name
-            regEx (str): an optional,  custom regEx can be passed
+            - servername (str): string containing the server name
+            - regEx (str): overrides the default regEx
 
         Returns:
-            The filtered server name if a match is found or the 
-            same string otherwise
+            - The filtered server name if a match is found or the 
+            - same string otherwise
         """
 
         if regEx is None:
@@ -157,8 +157,8 @@ class Remot3(object):
         """Implemented the connect to a device API call
 
         Args:
-        - deviceAddres (str): the device address of the selected installation
-        - token (str): Optional token to be used instead of self.token
+            - deviceAddres (str): the device address of the selected installation
+                - token (str): Optional token to be used instead of self.token
 
         Returns:
             - status (bool): whether the call returned successfully and the
@@ -209,11 +209,11 @@ class Remot3(object):
         """Maps a device name to a device address
 
         Args:
-        - deviceName (str): 
-        - serviceType (str): the service type, e.g. SSH
+            - deviceName (str): 
+            - serviceType (str): the service type, e.g. SSH
 
         Returns:
-        - deviceAddress(list): a list of matching device addresses
+            - deviceAddress(list): a list of matching device addresses
         """
 
         status, devices, _ = self.list_devices()
