@@ -86,6 +86,7 @@ class Remot3(object):
     def list_devices(self, resource='/device/list/all',
                      token=None):
         """Implements the device/list API call
+        
         Args:
             resource (str): API resource
             token (str): Optional token to be used instead of self.token
@@ -94,9 +95,9 @@ class Remot3(object):
         .. Note: requires a valid session token
 
         Returns:
-            - status (bool): whether the call returned successfully and the response is valid
-            - devices (list): a list of devices
-            - response_body (dict): the full response JSON object
+            status (bool): whether the call returned successfully and the response is valid
+            devices (list): a list of devices
+            response_body (dict): the full response JSON object
         """
 
         if token is None:
