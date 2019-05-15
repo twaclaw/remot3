@@ -22,9 +22,9 @@ A simple implementatoin of the remot3.it API
 Installation
 ~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: console
         
-        pip install remot3
+        $ pip install remot3
 
 Usage 
 ~~~~~
