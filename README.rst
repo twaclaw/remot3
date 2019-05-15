@@ -2,33 +2,22 @@
 remot3
 ======
 
-
 .. image:: https://img.shields.io/pypi/v/remot3.svg
         :target: https://pypi.python.org/pypi/remot3
 
-.. image:: https://img.shields.io/travis/twaclaw/remot3.svg
-        :target: https://travis-ci.com/twaclaw/remot3
+.. image:: https://img.shields.io/pypi/l/remot3.svg
+        :target: https://pypi.python.org/pypi/remot3
 
-.. image:: https://readthedocs.org/projects/remot3/badge/?version=latest
-        :target: https://remot3.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-
-.. image:: https://pyup.io/repos/github/twaclaw/remot3/shield.svg
-     :target: https://pyup.io/repos/github/twaclaw/remot3/
-     :alt: Updates
+.. image:: https://img.shields.io/pypi/pyversions/remot3.svg
+        :target: https://pypi.python.org/project/remot3
 
 
-
-Implementation of the remot3.it API
+A simple implementatoin of the remot3.it API
 
 
 * Free software: MIT license
 * Documentation: https://remot3.readthedocs.io.
 
-
-Features
---------
 
 Installation
 ~~~~~~~~~~~~~
@@ -46,7 +35,7 @@ Usage
 
         r3 = Remot3(developer_key, user, password)
 
-        # Optionally, the api version can be defined
+        # Optionally, the api version can be specified
         r3 = Remot3(developer_key, user, password, apiurl='https://api.remot3.it/apv/v27/')
 
         r3.login()
@@ -64,8 +53,8 @@ Usage
 Credits
 -------
 
-* https://remote.it/
+- https://remote.it/
 
-* This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+- This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
         .. _Cookiecutter: https://github.com/audreyr/cookiecutter
         .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
